@@ -1,3 +1,6 @@
-tesst
-
-是的防晒服的
+import textwrap
+import google.generativeai as genai
+from IPython.display import display, Markdown
+import os
+from dotenv import load_dotenv
+load_dotenv()
