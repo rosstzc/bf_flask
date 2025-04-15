@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from function import * 
 from process import * 
 
-
+print("当前工作目录:", os.getcwd())
 # #关注信息流-上新
 # df_product = pd.read_excel('./input/2025夏2——商品-宝贝管理-我的宝贝 (12).xlsx') 
 # df_combined = productID_to_list(df_product)
@@ -26,8 +26,8 @@ from process import *
 
 
 #输出淘宝群-清单的内容，需要结合“上新列表使用”
-follow_new = pd.read_excel('./output/关注信息流-清单组合列表.xlsx') 
-group_list = get_group_list(follow_new)
+# follow_new = pd.read_excel('./output/关注信息流-清单组合列表.xlsx') 
+# group_list = get_group_list(follow_new)
 
 
 

@@ -84,3 +84,30 @@ if __name__ == "__main__":
     result = analyze_review_sentiments(reviews, prompt_template)
     print(result)
 
+
+
+def extract_id(url):
+    import re  
+    match = re.search(r'id=(\d+)', url)
+    if match:
+        return match.group(1)
+    else:
+        return None
+
+#定义一个函数来处理“万”
+def convert(value):
+    if isinstance(value, str) and "万" in value:
+        return float(value.replace('万','')) * 10000
+    else:
+        return value
+    
+
+
+def convert2(value):
+    if isinstance(value, str):
+        if "万" in value:
+            return float(value.replace('万', '')) * 10000
+        elif "w" in value.lower():  # 检查 "w" 或 "W"
+            return float(value.lower().replace('w', '')) * 10000
+    return value
+
