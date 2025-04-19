@@ -8,3 +8,8 @@ __pycache__/
 
 # 忽略 VS Code 配置
 .vscode/
+
+
+venv/
+.ipynb_checkpoints/  
+# 忽略 Jupyter Notebook 输出

@@ -10,6 +10,8 @@ from process import *
 print("当前工作目录:", os.getcwd())
 
 
+#统计关注信息流曝光与店铺访客、信息数的关系
+
 
 
 # #关注信息流-上新
@@ -29,8 +31,6 @@ print("当前工作目录:", os.getcwd())
 
 # print(result.head(5))
 # print(result)
-
-
 
 
 #输出淘宝群-清单的内容，需要结合“上新列表使用”
