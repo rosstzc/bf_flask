@@ -111,3 +111,6 @@ def convert2(value):
             return float(value.lower().replace('w', '')) * 10000
     return value
 
+
+
+

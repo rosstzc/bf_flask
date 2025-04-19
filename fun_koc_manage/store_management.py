@@ -208,5 +208,46 @@ def process_biji(
     #df_merge.to_excel(filename)
     df_merge.to_excel(os.path.join(base_dir, './output/'+ filename))
 
-   
     return
+
+
+#从所有评论找出带有“边缝”的评论是笔记
+#从一个文件夹读取所有excel文件，1）把文件名存入一个df 2）读取每个excel文件的内容，搜索是否包含"边缝"这个词，在刚才df对应行的第二列标记1
+def search_files_in_directory(directory):
+    import pandas as pd
+    import os
+    import re
+
+    # 创建一个空的 DataFrame 来存储文件名和搜索结果
+    df = pd.DataFrame(columns=['文件名', '包含边缝'])
+
+    # 获取所有 .xlsx 文件的完整路径，并按创建时间排序
+    files = [
+        os.path.join(directory, f)
+        for f in os.listdir(directory)
+        if f.endswith('.xlsx')
+    ]
+    files.sort(key=lambda x: os.path.getctime(x))  # 按创建时间排序（越早越前）
+
+    # 遍历排序后的文件列表
+    for file_path in files:
+        filename = os.path.basename(file_path)
+        try:
+            df_excel = pd.read_excel(file_path)
+            text = df_excel.to_string()
+            if re.search(r'边缝', text):
+                df.loc[len(df)] = [filename, 1]
+            else:
+                df.loc[len(df)] = [filename, 0]
+        except Exception as e:
+            print(f"读取失败：{filename}，原因：{e}")
+
+    # 保存结果
+    result_path = os.path.join(directory, '搜索结果.xlsx')
+    df.to_excel(result_path, index=False)
+    print(f"已保存到: {result_path}")
+    return df
+
+
+
+

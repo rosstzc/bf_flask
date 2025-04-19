@@ -8,11 +8,19 @@ from function import *
 from process import * 
 
 print("当前工作目录:", os.getcwd())
+
+
+
+
 # #关注信息流-上新
-# df_product = pd.read_excel('./input/2025夏2——商品-宝贝管理-我的宝贝 (12).xlsx') 
+# df_product = pd.read_excel('./input/2025-夏3-商品-宝贝管理-我的宝贝 (13).xlsx') 
 # df_combined = productID_to_list(df_product)
 # result = get_follow_new(df_combined, '上新')
 
+# #关注信息流-预上新
+# df_product = pd.read_excel('./input/2025-夏4-商品-宝贝管理-我的宝贝 (13).xlsx') 
+# df_combined = productID_to_list(df_product)
+# result = get_follow_new(df_combined, '预上新')
 
 #关注信息流-清单
 # df_product = pd.read_excel('./input/2025-4-13-月销排序_商品-宝贝管理-我的宝贝 (13).xlsx') 
@@ -35,5 +43,3 @@ print("当前工作目录:", os.getcwd())
 #group_message = get_group_message()
 
 
-# print(group_list.head(5))
-# print(group_list)
