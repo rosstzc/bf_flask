@@ -41,6 +41,6 @@ print("当前工作目录:", os.getcwd())
 
 
 #群营销消息, 上新通知之类的
-group_message = get_group_message()
+# group_message = get_group_message()
 
 
