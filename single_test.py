@@ -14,7 +14,7 @@ print("当前工作目录:", os.getcwd())
 
 
 
-# #关注信息流-上新
+#关注信息流-上新
 # df_product = pd.read_excel('./input/2025-夏3-商品-宝贝管理-我的宝贝 (13).xlsx') 
 # df_combined = productID_to_list(df_product)
 # result = get_follow_new(df_combined, '上新')

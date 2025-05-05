@@ -13,3 +13,12 @@ __pycache__/
 venv/
 .ipynb_checkpoints/  
 # 忽略 Jupyter Notebook 输出
+
+
+# .gitignore 文件建议添加内容：
+__pycache__/
+*.pyc
+*.xlsx
+~$*.xlsx   # Excel的临时缓存文件
+input/
+output/
